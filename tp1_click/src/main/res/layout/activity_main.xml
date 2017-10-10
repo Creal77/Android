@@ -6,6 +6,18 @@
     android:layout_height="match_parent" tools:context="com.tp1_click.MainActivity"
     android:orientation="vertical">
 
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="33dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:max="4" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"

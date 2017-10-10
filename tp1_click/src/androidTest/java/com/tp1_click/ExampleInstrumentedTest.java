@@ -1,4 +1,4 @@
-package com.example.tp1;
+package com.tp1_click;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.tp1", appContext.getPackageName());
+        assertEquals("com.tp1_click", appContext.getPackageName());
     }
 }

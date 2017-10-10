@@ -1,4 +1,4 @@
-package com.example.tp1;
+package com.tp1_click;
 
 import org.junit.Test;
 

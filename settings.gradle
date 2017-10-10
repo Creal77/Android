@@ -1,1 +1,1 @@
-include ':app', ':tp1'
+include ':tp1_click'

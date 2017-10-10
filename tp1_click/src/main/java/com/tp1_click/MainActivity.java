@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(savedInstanceState != null) {
-
+            //TODO : Faire de truc
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

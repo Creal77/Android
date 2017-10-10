@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(savedInstanceState != null) {
+
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.button2);
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if(fromUser) {
                     displayMessages(checkBox, progress, textView, progressBar, seekBar);
-                    num = progress;
+                    num = progress + 1;
                 }
             }
 

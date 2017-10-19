@@ -1,1 +1,1 @@
-include ':tp1_click'
+include ':tp1_click', ':tp2_intercom'

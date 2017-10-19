@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/tp1_click" />
+            <option value="$PROJECT_DIR$/tp2_intercom" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

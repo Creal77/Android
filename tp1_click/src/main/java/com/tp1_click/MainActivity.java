@@ -1,6 +1,7 @@
 package com.tp1_click;
 
 import android.os.Build;
+import android.os.PersistableBundle;
 import android.support.annotation.IntegerRes;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(savedInstanceState != null) {
-            //TODO : Faire de truc
+            num = savedInstanceState.getInt("num");
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -47,22 +48,32 @@ public class MainActivity extends AppCompatActivity {
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         progressBar.setMax(textouille.length-1);
         seekBar.setMax(textouille.length-1);
+        if (num == textouille.length) {
+            num = 0;
+            displayMessages(checkBox, num, textView, progressBar, seekBar);
+        }
+        displayMessages(checkBox, num, textView, progressBar, seekBar);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                num++;
                 if (num == textouille.length) {
                     num = 0;
+                    displayMessages(checkBox, num, textView, progressBar, seekBar);
                 }
                 displayMessages(checkBox, num, textView, progressBar, seekBar);
-                num++;
             }
         });
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if(fromUser) {
-                    displayMessages(checkBox, progress, textView, progressBar, seekBar);
                     num = progress + 1;
+                    if (num == textouille.length) {
+                        num = 0;
+                        displayMessages(checkBox, num, textView, progressBar, seekBar);
+                    }
+                    displayMessages(checkBox, progress, textView, progressBar, seekBar);
                 }
             }
 
@@ -76,6 +87,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("num", num);
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
